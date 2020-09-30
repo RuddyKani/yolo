@@ -1,11 +1,15 @@
 FROM node:10-alpine
 
-WORKDIR /usr/src/app
+#Set the working directory
+WORKDIR /yolo
 
+#copy package.json files to working directory
 COPY client/package*.json ./
 
+#Install dependencies
 RUN npm install
 
+#copy all files to working directory
 COPY . .
 
 EXPOSE 5000
