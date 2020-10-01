@@ -1,0 +1,33 @@
+version: "3.8"
+services:
+    client:
+        container_name: yoloclient
+        build: ./client
+        image: yoloclient:version1
+        ports:
+            - "3000:3000"
+        depends_on:
+            - backend
+        networks:
+            yoloappnetwork
+    backend:
+        container_name: yolobackend
+        build: ./backend
+        image: yolobackend:version1
+        ports:
+            - "5000:5000"
+        depends_on:
+            - mongodb
+        networks:
+            yoloappnetwork
+    mongodb:
+        image: mongo
+        restart: always
+        container_name: mongodb
+        volumes:
+            - ./datadir:/data/db
+        ports:
+            - 27017:27017
+        command: mongod --noauth --smallfiles
+        networks:
+            - yoloappnetwork
