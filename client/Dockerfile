@@ -4,7 +4,7 @@ FROM node:10-alpine
 WORKDIR /client
 
 #copy package.json files to working directory
-COPY client/package*.json /client/
+COPY package*.json /client/
 
 #Install dependencies
 RUN npm install
