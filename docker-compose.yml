@@ -9,7 +9,7 @@ services:
         depends_on:
             - backend
         networks:
-            yoloappnetwork
+            - yoloappnetwork
     backend:
         container_name: yolobackend
         build: ./backend
@@ -19,7 +19,7 @@ services:
         depends_on:
             - mongodb
         networks:
-            yoloappnetwork
+            - yoloappnetwork
     mongodb:
         image: mongo
         restart: always
@@ -31,3 +31,6 @@ services:
         command: mongod --noauth --smallfiles
         networks:
             - yoloappnetwork
+networks:
+    yoloappnetwork:
+        driver: bridge
