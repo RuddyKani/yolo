@@ -12,8 +12,8 @@ RUN npm install
 #copy all files to the container at /client
 COPY . /client/
 
-#Make port 5000 available outside the container
-EXPOSE 5000
+#Make port 3000 available outside the container for react
+EXPOSE 3000
 
 #Run app when container launches
 CMD ["npm", "start"]
