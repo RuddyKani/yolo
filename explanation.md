@@ -4,45 +4,46 @@
 node:10-alpine - For node due to smaller size
 mongo - for mongodb
 
+
 ### Docker directives
 #### Client
-Download node Image
+Download node Image  
 Set working directory
-Copy package.json files to working directory
-Install dependencies
+Copy package.json files to working directory  
+Install dependencies  
 copy all files to current directory
-Expose port 3000 for react
+Expose port 3000 for react  
 Run start command
 
 
 #### Backend
 Download node Image
 Set working directory
-Copy package.json files to working directory
-Install dependencies
+Copy package.json files to working directory  
+Install dependencies  
 copy all files to current directory
-Expose port 5000
+Expose port 5000  
 Run start command
 
 
 
 #### Database
 Run mongo Image
-Set volume for persistence
-Set port 27017
-Set network to communicate with the other containers
+Set volume for persistence  
+Set port 27017  
+Set network to communicate with the other containers  
 
 
-### Docker-compose
-For client
-Depends on Backend
+### Docker-compose Network
+For client  
+Depends on Backend  
 Set network
 
 For Backend
 Depends on Database
 Set network
 
-Network set to use driver:bridge
+Network set to use driver:bridge  
 
 
 ### Volumes
@@ -60,7 +61,7 @@ sudo docker-compose build
 sudo docker-compose up
 
 ## Known Bugs
-Container failing with error MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017 Research on fixing
+Container failing with error MongooseServerSelectionError: connect ECONNREFUSED 127.0.0.1:27017 Research on fixing  
 Issue pointing to known bug 'This is an issue with react-scripts@3.4.1'
 
 
