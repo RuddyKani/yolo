@@ -1,11 +1,11 @@
 ## Yolo Containerized e-commerce website
 
-###Base Images
+### Base Images
 node:10-alpine - For node due to smaller size
 mongo - for mongodb
 
-###Docker directives
-####client
+### Docker directives
+#### Client
 Download node Image
 Set working directory
 Copy package.json files to working directory
@@ -15,7 +15,7 @@ Expose port 3000 for react
 Run start command
 
 
-####Backend
+#### Backend
 Download node Image
 Set working directory
 Copy package.json files to working directory
@@ -26,14 +26,14 @@ Run start command
 
 
 
-####Database
+#### Database
 Run mongo Image
 Set volume for persistence
 Set port 27017
 Set network to communicate with the other containers
 
 
-###Docker-compose
+### Docker-compose
 For client
 Depends on Backend
 Set network
@@ -45,7 +45,7 @@ Set network
 Network set to use driver:bridge
 
 
-####volumes
+### Volumes
 Volume set for database container for data persistence on addition of product
 
 ## Setup/Installation Requirements
