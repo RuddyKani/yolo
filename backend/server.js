@@ -8,6 +8,7 @@ const productRoute = require('./routes/api/productRoute');
 
 // Connecting to the Database
 let mongodb_url = 'mongodb://localhost/';
+//let mongodb_url = 'mongodb://127.0.0.1:27018';
 let dbName = 'yolomy';
 
 // define a url to connect to the database
@@ -31,10 +32,10 @@ const app = express()
 // Body parser middleware
 app.use(express.json())
 
-// 
-app.use(upload.array()); 
+//
+app.use(upload.array());
 
-// Cors 
+// Cors
 app.use(cors());
 
 // Use Route
